@@ -12,9 +12,9 @@ def Diff(x):
     return  x_diff - 100
 
 # Get and prepare data
-data = pdr.get_data_fred('PCUOMFGOMFG', start ='01-01-2007')
+data = pdr.get_data_fred('PCUOMFGOMFG', start ='01-01-2007') # Producer Price Index by Industry: Total Manufacturing Industries
 data = data.rename(columns = {'PCUOMFGOMFG': 'PPI'})
-data_cpi = pdr.get_data_fred('CPIAUCSL', start ='01-01-2007')
+data_cpi = pdr.get_data_fred('CPIAUCSL', start ='01-01-2007') # Consumer Price Index for All Urban Consumers: All Items in U.S. City Average
 data['CPI'] = data_cpi
 data['PPI %'] = Diff(data['PPI'])
 data['CPI %'] = Diff(data['CPI'])
@@ -28,7 +28,7 @@ Y = data['CPI %']
 plt.figure(figsize=(10,5))
 plt.plot(data.index , data['PPI'], color='b', label = 'PPI')
 plt.plot(data.index, data['CPI'], color='r', label = 'CPI')
-plt.title('Price Producer Index / Consumer Price Index')
+plt.title('Producer Price Index by Industry: Total Manufacturing Industries / Consumer Price Index')
 plt.axhline(y=0, color='r', linestyle='-')
 plt.legend()
 plt.xticks(data.index, rotation=45)
