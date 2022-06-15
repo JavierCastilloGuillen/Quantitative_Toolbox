@@ -130,9 +130,9 @@ else:
     print('Series is not stationary. Should we differenciate it?')
 
 
-# Slice your data here for train and test the model (hardcoding or develope this section) 
+# Slice your data here for train and test the model (hardcoding or develop this section) 
 y_train = data[:35]
-y_test = data[65:]
+y_test = data[35:]
 
 print('Data splitted into:\n')
 print('train', len(y_train))
