@@ -129,7 +129,8 @@ if (test['p-value']) <= 0.05:
 else:
     print('Series is not stationary. Should we differenciate it?')
 
-
+# To add here PACF and ACF   
+    
 # Slice your data here for train and test the model (hardcoding or develop this section) 
 y_train = data[:35]
 y_test = data[35:]
